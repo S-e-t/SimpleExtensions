@@ -1,2 +1,2 @@
 # SimpleExtensions
-simple useful extensions
+Simple useful extensions for C#.
