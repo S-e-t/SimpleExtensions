@@ -1,5 +1,7 @@
 # SimpleExtensions
 
+[![NuGet version](https://badge.fury.io/nu/SetApi.SimpleExtensions.svg)](https://badge.fury.io/nu/SetApi.SimpleExtensions) [![Build status](https://ci.appveyor.com/api/projects/status/oj0rppeypm3avael/branch/master?svg=true)](https://ci.appveyor.com/project/S-e-t/simpleextensions/branch/master)
+
 Simple useful extensions for C#.
 
 ## Usage
