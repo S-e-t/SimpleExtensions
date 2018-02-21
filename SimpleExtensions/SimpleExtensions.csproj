@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>SET</Authors>
+    <Company>SetApi</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageId>SetApi.SimpleExtensions</PackageId>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/S-e-t/SimpleExtensions/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/S-e-t/SimpleExtensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/S-e-t/SimpleExtensions</RepositoryUrl>
+    <Description>Simple useful extensions for C#.</Description>
   </PropertyGroup>
 
 </Project>
