@@ -91,5 +91,5 @@ public class ViewFactory {
 The library itself can also be installed in your application using the NuGet package manager.
 
 ```
-PM> Install-Package SetApi.SimpleExtensions -Version 1.0.1
+PM> Install-Package SetApi.SimpleExtensions
 ```
