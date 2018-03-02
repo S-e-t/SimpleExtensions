@@ -18,6 +18,18 @@ namespace SimpleExtensions.Test {
             Assert.AreEqual(dict.TryGetValue(3, "key3"), "key3");
 
             Assert.AreEqual(dict.TryGetValue(4), "key4");
+
+            var readOnly = dict.ToReadOnlyDictionary();
+
+            Assert.AreEqual(readOnly.TryGetValue(1), "key1");
+
+            Assert.AreNotEqual(readOnly.TryGetValue(2), "keyNew2");
+            Assert.AreEqual(readOnly.TryGetValue(2), "key2");
+
+            Assert.AreNotEqual(readOnly.TryGetValue(3), "key3");
+            Assert.AreEqual(readOnly.TryGetValue(3, "key3"), "key3");
+
+            Assert.AreEqual(readOnly.TryGetValue(4), "key4");
         }        
     }
 }

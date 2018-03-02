@@ -42,5 +42,38 @@ namespace SimpleExtensions {
             if (!source.ContainsKey(key)) source.Add(key, value);
             return source;
         }
+
+        /// <summary>
+        /// Convert IDictionary to IReadOnlyDictionary
+        /// </summary>
+        /// <typeparam name="TKey">key type</typeparam>
+        /// <typeparam name="TValue">value type</typeparam>
+        /// <param name="source">source dictionary</param>
+        public static IReadOnlyDictionary<TKey, TValue> ToReadOnlyDictionary<TKey, TValue>(this IDictionary<TKey, TValue> source) {
+            return new System.Collections.ObjectModel.ReadOnlyDictionary<TKey, TValue>(source ?? new Dictionary<TKey, TValue>());
+        }
+
+        /// <summary>
+        /// Return either an element by key or the default value
+        /// </summary>
+        /// <typeparam name="TKey">key type</typeparam>
+        /// <typeparam name="TValue">value type</typeparam>
+        /// <param name="source">source dictionary</param>
+        /// <param name="key">key</param>
+        public static TValue TryGetValue<TKey, TValue>(this IReadOnlyDictionary<TKey, TValue> source, TKey key) {
+            return source.TryGetValue(key, default(TValue));
+        }
+
+        /// <summary>
+		/// Return either an element by key or the default value
+		/// </summary>
+		/// <typeparam name="TKey">key type</typeparam>
+        /// <typeparam name="TValue">value type</typeparam>
+        /// <param name="source">source dictionary</param>
+        /// <param name="key">key</param>
+		/// <param name="default">default value</param>
+        public static TValue TryGetValue<TKey, TValue>(this IReadOnlyDictionary<TKey, TValue> source, TKey key, TValue @default) {
+            return source.ContainsKey(key) ? source[key] : @default;
+        }
     }
 }
