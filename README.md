@@ -6,11 +6,11 @@ Simple useful extensions for C#.
 
 ## Usage
 
-See [Tests](./SimpleExtensions.Test/) for more examples, such as:
+See [Tests](https://github.com/S-e-t/SimpleExtensions/tree/master/SimpleExtensions.Test) for more examples, such as:
 
- - [build DataTable](./SimpleExtensions.Test/TestDataTableExtensions.cs)
- - work with [IEnumerable](./SimpleExtensions.Test/TestIEnumerableExtensions.cs) and [IDictionary](./SimpleExtensions.Test/TestIDictionaryExtensions.cs)
- - [parse String](./SimpleExtensions.Test/TestStringExtention.cs)
+ - [build DataTable](https://github.com/S-e-t/SimpleExtensions/blob/master/SimpleExtensions.Test/TestDataTableExtensions.cs)
+ - work with [IEnumerable](https://github.com/S-e-t/SimpleExtensions/blob/master/SimpleExtensions.Test/TestIEnumerableExtensions.cs) and [IDictionary](https://github.com/S-e-t/SimpleExtensions/blob/master/SimpleExtensions.Test/TestIDictionaryExtensions.cs)
+ - [parse String](https://github.com/S-e-t/SimpleExtensions/blob/master/SimpleExtensions.Test/TestStringExtention.cs)
 
 The main purpose of this extension library is to simplify the implementation of the business logic of your application, for example:
 ```c#
