@@ -13,9 +13,10 @@ namespace SimpleExtensions {
         /// <typeparam name="T">new column type</typeparam>
         /// <param name="dt">DataTable</param>
         /// <param name="name">new column name</param>
+        /// <param name="allowDBNull">column allowDBNull</param>
         /// <returns>DataTable</returns>
-        public static DataTable ColumnAdd<T>(this DataTable dt, string name) {
-            dt.Columns.Add(name, typeof(T));            
+        public static DataTable ColumnAdd<T>(this DataTable dt, string name, bool allowDBNull = false) {
+            dt.Columns.Add(new DataColumn(name, typeof(T)) { AllowDBNull = allowDBNull });            
             return dt;
         }
         /// <summary>
