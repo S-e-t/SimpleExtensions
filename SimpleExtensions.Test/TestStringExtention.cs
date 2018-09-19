@@ -100,6 +100,14 @@ namespace SimpleExtensions.Test {
         }
 
         [TestMethod]
+        public void ToTimeSpanTest() {
+            var span = TimeSpan.FromMinutes(200);
+            Assert.AreEqual(span.Subtract(span.ToString().ToTimeSpan()).Seconds, 0);
+            Assert.AreEqual("3:10:20".ToTimeSpan(), new TimeSpan(3,10,20));            
+            Assert.AreEqual(span.ToString(@"mm\:hh\:ss").ToTimeSpan(@"mm\:hh\:ss"), span);
+        }
+
+        [TestMethod]
         public void ToByteArrayTest() {
             var str = @"My Test string with 5 words.";
             Assert.AreEqual(str.ToByteArray().ByteToString(), str);

@@ -85,7 +85,7 @@ namespace SimpleExtensions {
         /// <param name="defaultValue">the default value (if the DateTime could not be specified)</param>
         /// <param name="timeZoneShift">time Zone Shift in hours</param>
         /// <returns>DateTime</returns>
-        static public DateTime ToDateTime(this string val, DateTime defaultValue = default(DateTime), int timeZoneShift = 0)=>
+        static public DateTime ToDateTime(this string val, DateTime defaultValue = default(DateTime), int timeZoneShift = 0) =>
              DateTime.TryParse(val, out DateTime res) ? res.AddHours(timeZoneShift) : defaultValue;
 
         /// <summary>
@@ -95,9 +95,12 @@ namespace SimpleExtensions {
         /// <param name="format">A format specifier that defines the required format of value</param>
         /// <param name="defaultValue">the default value (if the DateTime could not be specified)</param>
         /// <param name="timeZoneShift">time Zone Shift in hours</param>
+        /// <param name="cultureInfo">provides information about a specific culture (default InvariantCulture)</param>
+        /// <param name="dateTimeStyles">Defines the formatting options that customize string parsing for date and time (default DateTimeStyles.None)</param>
         /// <returns>DateTime</returns>
-        static public DateTime ToDateTime(this string val, string format, DateTime defaultValue = default(DateTime), int timeZoneShift = 0) =>
-             DateTime.TryParseExact(val, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime res) ? res.AddHours(timeZoneShift) : defaultValue;
+        static public DateTime ToDateTime(this string val, string format, DateTime defaultValue = default(DateTime)
+            , int timeZoneShift = 0, CultureInfo cultureInfo = null, DateTimeStyles dateTimeStyles = DateTimeStyles.None) =>
+             DateTime.TryParseExact(val, format, cultureInfo ?? CultureInfo.InvariantCulture, dateTimeStyles, out DateTime res) ? res.AddHours(timeZoneShift) : defaultValue;
 
         /// <summary>
         ///Conversion to boolean
@@ -179,6 +182,46 @@ namespace SimpleExtensions {
         /// <param name="second">second value</param>
         /// <returns>true, if is equal; otherwise, false.</returns>
         static public bool EqualsWithEpsilon(this float first, float second = 0) => Math.Abs(first - second) < float.Epsilon;
+
+        /// <summary>
+        /// Conversion to TimeSpan
+        /// </summary>
+        /// <param name="val">string to be converted</param>
+        /// <param name="cultureInfo">provides information about a specific culture (default InvariantCulture)</param>
+        /// <returns>TimeSpan</returns>
+        static public TimeSpan ToTimeSpan(this string val, CultureInfo cultureInfo = null)
+            => val.ToTimeSpan(TimeSpan.Zero, cultureInfo);
+
+        /// <summary>
+        /// Conversion to TimeSpan
+        /// </summary>
+        /// <param name="val">string to be converted</param>
+        /// <param name="defaultValue">the default value (if the TimeSpan could not be specified)</param>
+        /// <param name="cultureInfo">provides information about a specific culture (default InvariantCulture)</param>
+        /// <returns>TimeSpan</returns>
+        static public TimeSpan ToTimeSpan(this string val, TimeSpan defaultValue, CultureInfo cultureInfo = null) =>
+            TimeSpan.TryParse(val, cultureInfo ?? CultureInfo.InvariantCulture, out TimeSpan res) ? res : defaultValue;
+
+        /// <summary>
+        /// Conversion to TimeSpan
+        /// </summary>
+        /// <param name="val">string to be converted</param>
+        /// <param name="format">A format specifier that defines the required format of value</param>
+        /// <param name="cultureInfo">provides information about a specific culture (default InvariantCulture)</param>
+        /// <returns>TimeSpan</returns>
+        static public TimeSpan ToTimeSpan(this string val, string format, CultureInfo cultureInfo = null) 
+            => val.ToTimeSpan(format, TimeSpan.Zero, cultureInfo);
+
+        /// <summary>
+        /// Conversion to TimeSpan
+        /// </summary>
+        /// <param name="val">string to be converted</param>
+        /// <param name="format">A format specifier that defines the required format of value</param>
+        /// <param name="defaultValue">the default value (if the TimeSpan could not be specified)</param>
+        /// <param name="cultureInfo">provides information about a specific culture (default InvariantCulture)</param>
+        /// <returns>TimeSpan</returns>
+        static public TimeSpan ToTimeSpan(this string val, string format, TimeSpan defaultValue, CultureInfo cultureInfo = null) =>
+            TimeSpan.TryParseExact(val, format, cultureInfo ?? CultureInfo.InvariantCulture, out TimeSpan res) ? res : TimeSpan.Zero;
 
         #endregion ----------------------------- Parse --------------------------------
 

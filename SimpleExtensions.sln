@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleExtensions", "SimpleExtensions\SimpleExtensions.csproj", "{1BFBA961-F16F-4051-A583-865DC4A76FB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExtensions.Test", "SimpleExtensions.Test\SimpleExtensions.Test.csproj", "{DA75DE8C-BA07-44E1-9C47-FE88B8F3E7A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleExtensions.Test", "SimpleExtensions.Test\SimpleExtensions.Test.csproj", "{DA75DE8C-BA07-44E1-9C47-FE88B8F3E7A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
